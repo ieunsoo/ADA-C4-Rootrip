@@ -1,14 +1,12 @@
-//
-//  CanvasViewController.swift
-//  Rootrip
-//
-//  Created by POS on 7/24/25.
-//
-
 import MapKit
 import PencilKit
 import UIKit
 
+/**
+ CanvasView의 view controller
+ - 툴바와 구조상 분리되어있지만 툴바의 기능을 여기 컨트롤러로 동작하게 만들것들이 있음
+ - 그림 그리기, 지우기, 수정하기, 펜의 관한 기능, 설정 등등이 여기에 존재함
+ */
 class CanvasViewController: UIViewController, PKCanvasViewDelegate {
     let UtilPenState = UtilPen()
 
@@ -103,8 +101,6 @@ class CanvasViewController: UIViewController, PKCanvasViewDelegate {
     @objc func linewidthSliderValueChanged() {
         canvasView.tool = PKInkingTool(.pen, color: penColor, width: lineWidth)
     }
-
-    
     @objc func eraserTapped() { canvasView.tool = PKEraserTool(.vector) }
     @objc func colorChanged() {
         if let selected = colorPicker.selectedColor {
@@ -221,6 +217,7 @@ class CanvasViewController: UIViewController, PKCanvasViewDelegate {
             print("Error saving data: \(error)")
         }
     }
+    
     private func getDocumentsDirectory() -> URL {
         FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[
             0

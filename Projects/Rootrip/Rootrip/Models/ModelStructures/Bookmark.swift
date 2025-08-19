@@ -1,13 +1,7 @@
-//
-//  Bookmark.swift
-//  Rootrip
-//
-//  Created by POS on 7/18/25.
-//
-
 import FirebaseFirestore
 import Foundation
 
+/// SideBar에 존재하는 여행 포인트를 저장하기 위한 Model
 struct Bookmark: Identifiable, Codable {
     @DocumentID var id: String?
     var projectID: String

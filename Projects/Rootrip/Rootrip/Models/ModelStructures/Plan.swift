@@ -1,10 +1,3 @@
-//
-//  Plan.swift
-//  Rootrip
-//
-//  Created by POS on 7/18/25.
-//
-
 import FirebaseFirestore
 import Foundation
 

@@ -1,16 +1,11 @@
-//
-//  StrokePointData.swift
-//  Rootrip
-//
-//  Created by POS on 7/18/25.
-//
-
 import Foundation
 import FirebaseFirestore
 
+
+/// 하나의 선을 구성하는 점 단위의 Model
 struct StrokePointData: Identifiable, Codable {
     @DocumentID var id: String?
     var x: Double
     var y: Double
-    var lineWidth: Double //sizeWidth&sizeHeidht -> lineWidth 수정
+    var lineWidth: Double
 }

@@ -2,6 +2,7 @@ import Foundation
 import FirebaseFirestore
 import UIKit
 
+/// 프로젝트에 새로운 유저를 초대하는 기능을 수행하는 ViewModel
 @MainActor
 final class InviteViewModel: ObservableObject {
     @Published var errorMessage: String?
@@ -51,7 +52,7 @@ final class InviteViewModel: ObservableObject {
                 return
             }
             
-            var project = try projectSnapshot.data(as: Project.self)
+            let project = try projectSnapshot.data(as: Project.self)
             
             // 3. 이미 멤버인지 확인
             if project.memberIDs.contains(userID) {

@@ -1,10 +1,3 @@
-//
-//  ProjectRepository.swift
-//  Rootrip
-//
-//  Created by POS on 7/19/25.
-//
-
 import FirebaseFirestore
 import Foundation
 
@@ -35,13 +28,13 @@ final class ProjectRepository: ProjectRepositoryProtocol {
         endDate: Date?,
         userID: String
     ) async throws -> Project {
-        /// if no 'endDate' though TripType == .overnightTrip
+        // if no 'endDate' though TripType == .overnightTrip
         guard !(tripType == .overnightTrip && endDate == nil) else {
             print("createProject Error - endDate required")
             throw NSError(domain: "ProjectRepositoryError", code: 1, userInfo: [NSLocalizedDescriptionKey: "1박 이상 여행의 경우 종료일이 필요합니다."])
         } //반환타입이 Project가 되도록 수정
         
-        /// if no 'title' input, auto generate project title
+        // if no 'title' input, auto generate project title
         let title_ = try await (title != nil ? title! : genTitle(base: baseTitle))
 
         // newProject를 var로 선언하여 id를 설정할 수 있게 함

@@ -8,6 +8,7 @@
 import Foundation
 import MapKit
 
+///지도에 나타나는 마커를 지정하기 위한 Model
 struct POIData: Identifiable {
     let id = UUID()
     let mapDetailID: String

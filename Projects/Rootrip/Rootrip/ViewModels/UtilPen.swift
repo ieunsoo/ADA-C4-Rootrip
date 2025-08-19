@@ -1,30 +1,20 @@
-//
-//  UtilPen.swift
-//  utilPenTest
-//
-//  Created by POS on 7/12/25.
-//
-
 import CoreLocation
 import Foundation
 import MapKit
 
 class UtilPen: ObservableObject {
+    @Published var lastInput: InputType?
+    @Published var allInputs: [InputType] = []
 
-    // MARK: - Delegate (선택)
     weak var delegate: UtilPenDelegate?
 
-    // MARK: - InputType 정의
+    /// InputType 정의
     enum InputType {
         case line(start: CLLocationCoordinate2D, end: CLLocationCoordinate2D)
         case area(points: [CLLocationCoordinate2D])
     }
 
-    // MARK: - Published Properties (SwiftUI 연동)
-    @Published var lastInput: InputType?
-    @Published var allInputs: [InputType] = []
-
-    // MARK: - Input 처리
+    /// Input 처리
     func lineHandler(_ coords: [CLLocationCoordinate2D], mapView: MKMapView) {
         guard coords.count >= 2 else { return }
         lastInput = .line(start: coords.first!, end: coords.last!)
@@ -39,7 +29,7 @@ class UtilPen: ObservableObject {
         setArea(coords, in: mapView)
     }
 
-    // MARK: - 지도 렌더링
+    /// 지도 렌더링
     func showRoute(
         from start: CLLocationCoordinate2D,
         to end: CLLocationCoordinate2D,
@@ -74,11 +64,9 @@ class UtilPen: ObservableObject {
 
             // 중간 지점 계산
             let polylinePoints = route.polyline.points()
-            let midPoint = polylinePoints[route.polyline.pointCount / 2]
-                .coordinate
-
-            // TODO: 애노테이션 추가부분. 디자인 적용해야함
+            let midPoint = polylinePoints[route.polyline.pointCount / 2].coordinate
             let annotation = MKPointAnnotation()
+            
             annotation.coordinate = midPoint
             annotation.title = "도보 \(Int(route.expectedTravelTime / 60))분"
             mapView.addAnnotation(annotation)
@@ -87,7 +75,7 @@ class UtilPen: ObservableObject {
         }
     }
 
-    // MARK: - 영역 지도 표시
+    /// 영역 지도 표시
     func setArea(_ points: [CLLocationCoordinate2D], in mapView: MKMapView) {
         guard points.count >= 3 else { return }
         let polygon = MKPolygon(coordinates: points, count: points.count)
@@ -95,7 +83,7 @@ class UtilPen: ObservableObject {
         mapView.setVisibleMapRect(polygon.boundingMapRect, animated: true)
     }
 
-    // MARK: - Zoom 등 추가 유틸(필요시)
+    /// Zoom 등 추가 유틸(필요시)
     func zoomToRegion(
         containing coordinates: [CLLocationCoordinate2D],
         in mapView: MKMapView,

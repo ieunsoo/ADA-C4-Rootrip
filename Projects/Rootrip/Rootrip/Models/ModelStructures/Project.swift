@@ -1,26 +1,18 @@
-//
-//  Project.swift
-//  Rootrip
-//
-//  Created by POS on 7/18/25.
-//
-
 import FirebaseFirestore
 import Foundation
 
-enum TripType: String, Codable, CaseIterable {
-    case dayTrip
-    case overnightTrip
-}
-
+/// 하나의 여행 프로젝트를 담는 Model
 struct Project: Identifiable, Codable, Equatable {
     @DocumentID var id: String?
+    
     var title: String
     var createdDate: Date
     var startDate: Date
     var endDate: Date?
+    /// 당일치기 여행인지 n박 여행인지 구분하기 위한 열거형
     var tripType: TripType
-    var memberIDs: [String]        // 공동작업자들의 ID 리스트
+    /// 공동작업자들의 ID 리스트
+    var memberIDs: [String]
 
     init(
         title: String,

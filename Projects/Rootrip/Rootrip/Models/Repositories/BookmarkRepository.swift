@@ -1,10 +1,3 @@
-//
-//  BookmarkRepository.swift
-//  Rootrip
-//
-//  Created by POS on 7/20/25.
-//
-
 import FirebaseFirestore
 import Foundation
 

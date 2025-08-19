@@ -6,11 +6,9 @@ class MapViewModel: ObservableObject {
     // MARK: - 속성
     
     /// 지도에 표시되는 POI 어노테이션 배열
-    /// - 타입: [POIAnnotation]
     @Published var poiAnnotations: [POIAnnotation] = []
     
     /// 현재 선택된 POI 항목. Map 뷰의 선택 메커니즘과 바인딩됨.
-    /// - 타입: MKMapItem?
     @Published var selectedPOI: MKMapItem? = nil
     
     /// POI 검색을 수행하는 저장소
@@ -19,7 +17,8 @@ class MapViewModel: ObservableObject {
     // MARK: - 초기화
     
     /// POI 검색 저장소를 주입하여 ViewModel을 초기화합니다.
-    /// - Parameter poiSearchRepository: POI 검색을 수행할 Repository
+    /// - Parameters :
+    ///   - poiSearchRepository: POI 검색을 수행할 Repository
     init(poiSearchRepository: POISearchRepository = POISearchRepository()) {
         self.poiSearchRepository = poiSearchRepository
     }

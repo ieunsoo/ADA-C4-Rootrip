@@ -1,23 +1,18 @@
-//
-//  MapDetail.swift
-//  Rootrip
-//
-//  Created by POS on 7/18/25.
-//
-
 import Foundation
 import FirebaseFirestore
 import CoreLocation
 
+/// 지도에서 하나의 구체적인 장소를 저장하기 위한 model
 struct MapDetail: Identifiable, Codable, Equatable {
     @DocumentID var id: String?
-    var containerID: String //Plan A, B 등 플랜 긴 구분에 관한 id(추가) + 어느 bookmark에 소속되어있는지도
+    
+    /// Plan A, B 등 플랜 간 구분함과 동시에 어떤 bookmark에 소속되어있는지 구분하기 위한 ID
+    var containerID: String
     var name: String
     var latitude: Double
     var longitude: Double
 }
 
-//TODO: 좌표반환 함수는 나중에 만들어서 적용해야함
 extension MapDetail {
     var coordinate: CLLocationCoordinate2D {
         CLLocationCoordinate2D(latitude: latitude, longitude: longitude)

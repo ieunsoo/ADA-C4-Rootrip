@@ -3,7 +3,7 @@ import MapKit
 
 // MARK: - POISearchRepository
 /// POI 검색을 수행하는 Repository 클래스
-class POISearchRepository: POISearchRepositoryProtocol {    
+class POISearchRepository: POISearchRepositoryProtocol {
     /// 키워드와 지도 영역을 기반으로 POI 검색을 실행합니다.
     /// - Parameters:
     ///   - query: 검색할 자연어 키워드 문자열

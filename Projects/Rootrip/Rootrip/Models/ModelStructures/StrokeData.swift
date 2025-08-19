@@ -1,17 +1,11 @@
-//
-//  StrokeData.swift
-//  Rootrip
-//
-//  Created by POS on 7/18/25.
-//
-
 import Foundation
 import FirebaseFirestore
 
+/// 하나의 선을 저장하는 Model
 struct StrokeData: Identifiable, Codable {
     @DocumentID var id: String?
     var isUtilPen: Bool
     var isDeleted: Bool
-    var inkColor: Double // [Double] -> Double 수정
+    var inkColor: Double
     var points: [StrokePointData]
 }

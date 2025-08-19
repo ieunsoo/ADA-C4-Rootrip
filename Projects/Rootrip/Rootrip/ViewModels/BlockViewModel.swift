@@ -1,6 +1,13 @@
 import Foundation
 import SwiftUI
 
+/**
+ 프로젝트의 CRUD를 담당하는 ViewModel
+ - 현재 사용자 ID에 해당하는 프로젝트 가져오기
+ - 새로운 프로젝트를 생성하고 내비게이션을 준비하는 함수
+ - 프로젝트 새로고침
+ - 프로젝트 삭제
+ */
 @MainActor
 final class BlockViewModel: ObservableObject {
     @Published var projects: [Project] = []

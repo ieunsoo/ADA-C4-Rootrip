@@ -1,10 +1,3 @@
-//
-//  MapDetailRepository.swift
-//  Rootrip
-//
-//  Created by POS on 7/28/25.
-//
-
 import Foundation
 import FirebaseFirestore
 
