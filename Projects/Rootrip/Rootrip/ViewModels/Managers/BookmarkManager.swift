@@ -2,7 +2,12 @@ import FirebaseFirestore
 import Foundation
 import MapKit
 
-/// 사용자가 선택한 북마크를 관리하고, 지도에 해당 위치를 표시하는 매니저 클래스
+/**
+ * 사용자가 북마크한 장소들을 관리하고, 지도에 시각화하는 핵심 매니저 클래스입니다.
+ * - 이 클래스는 Firestore로부터 북마크 목록과 각 북마크에 포함된 장소(MapDetail)들을 비동기적으로 로드합니다.
+ * - 지도 상에 장소들을 어노테이션(핀)으로 표시하고, 선택된 북마크에 따라 지도 뷰를 업데이트하는 역할을 수행합니다.
+ * - 북마크 섹션 및 개별 장소의 생성, 삭제, 그리고 편집 모드 관리에 필요한 상태와 메서드를 제공합니다.
+ */
 class BookmarkManager: ObservableObject {
     @Published var bookmarks: [Bookmark] = []
     @Published var mapDetails: [MapDetail] = []

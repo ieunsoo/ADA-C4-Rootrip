@@ -3,9 +3,7 @@ import MapKit
 import SwiftUI
 
 /**
- 우리의 프로젝트는 지도 위에 투명한 캔버스를 씌워서 그림을 그리고
- 그림을 MapKit의 overlay polygon으로 변환해서 지도위에 저장하는 구조를 가집니다.<br>
- ProjectView안에서 지도와 canvas, 상단 툴바, 사이드 바를 합치는 구조입니다.
+특정 프로젝트의 상세 내용을 보여주는 뷰입니다. 지도, 캔버스, 사이드바 등을 포함합니다.
  */
 struct ProjectView: View {
     let project: Project
@@ -31,6 +29,7 @@ struct ProjectView: View {
         ZStack {
             MapCanvasView(
                 viewModel: viewModel,
+                project: project,
                 shouldCenterOnUser: $shouldCenterOnUser,
                 isUtilPen: $isUtilPen,
                 isCanvasActive: $isCanvasActive,
@@ -41,16 +40,16 @@ struct ProjectView: View {
                 lineWidthTrigger: $lineWidthTrigger
             )
 
-            SidebarToggleView(
-                project: project,
-                lineWidth: $lineWidth,
-                isUtilPen: $isUtilPen,
-                isCanvasActive: $isCanvasActive,
-                isPageLocked: $isPageLocked,
-                undoTrigger: $undoTrigger,
-                redoTrigger: $redoTrigger,
-                lineWidthTrigger: $lineWidthTrigger
-            )
+//            SidebarToggleView(
+//                project: project,
+//                lineWidth: $lineWidth,
+//                isUtilPen: $isUtilPen,
+//                isCanvasActive: $isCanvasActive,
+//                isPageLocked: $isPageLocked,
+//                undoTrigger: $undoTrigger,
+//                redoTrigger: $redoTrigger,
+//                lineWidthTrigger: $lineWidthTrigger
+//            )
 //            .environmentObject(mapState)
         }
         .onAppear {

@@ -1,6 +1,7 @@
 import Foundation
 import SwiftUI
 
+/// 가장 최근 프로젝트를 표시하는 큰 카드 뷰입니다.
 struct LargeCardView: View {
     let project: Project
     var isEditing: Bool

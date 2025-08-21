@@ -4,7 +4,11 @@ import Foundation
 import MapKit
 
 // MARK: - 섹션 관리 매니저
-/// 모든 플랜 섹션 및 하위 장소 버튼 동작처리를 관리하고, PlanA/B섹션을 기본 제공합니다.
+/**
+ * 모든 플랜 섹션 및 하위 장소 버튼 동작 처리를 관리하고, 초기 PlanA/B 섹션을 제공합니다.
+ * - Firestore에서 플랜과 장소 데이터를 로드하고, 지도에 어노테이션 및 경로를 표시합니다.
+ * - 플랜 및 장소의 선택, 삭제, 생성과 관련된 상태 및 로직을 통합 관리합니다.
+ */
 class PlanManager: ObservableObject {
     @Published var selectedPlanID: String? = nil
     @Published var plans: [Plan] = []

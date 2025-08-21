@@ -1,5 +1,6 @@
 import SwiftUI
 
+/// 현재 위치를 지도의 중심으로 이동시키는 버튼입니다.
 struct CenterLocationButton: View {
     var onTap: () -> Void
 

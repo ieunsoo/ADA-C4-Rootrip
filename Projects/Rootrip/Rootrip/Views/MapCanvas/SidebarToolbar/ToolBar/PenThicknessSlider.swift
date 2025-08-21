@@ -1,6 +1,6 @@
 import SwiftUI
 
-
+/// 펜의 굵기를 조절하는 슬라이더입니다.
 struct PenThicknessSlider: View {
     /// 기본(권장) 두께 8.0
     @Binding var thickness: CGFloat

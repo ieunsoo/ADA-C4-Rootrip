@@ -1,6 +1,7 @@
 import MapKit
 import SwiftUI
 
+/// 북마크 목록을 보여주는 뷰입니다.
 struct BookmarkView: View {
     @EnvironmentObject var bookmarkManager: BookmarkManager
     @EnvironmentObject var mapState: LocationManager

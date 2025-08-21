@@ -2,6 +2,11 @@ import CoreLocation
 import Foundation
 import MapKit
 
+/**
+ * 지도 위에서 선(경로) 및 영역을 그리는 데 사용되는 유틸리티 펜 클래스입니다.
+ * - 사용자의 입력(선 그리기 또는 영역 그리기)을 처리하고, 지도(`MKMapView`)에 해당 도형을 렌더링합니다.
+ * - 그리기 이력을 관리하고, 그리기 작업에 필요한 지도 유틸리티 기능을 제공합니다.
+ */
 class UtilPen: ObservableObject {
     @Published var lastInput: InputType?
     @Published var allInputs: [InputType] = []

@@ -1,5 +1,6 @@
 import SwiftUI
 
+/// 현재 프로젝트에 참여하고 있는 사용자 목록과 초대 기능을 제공하는 뷰입니다.
 struct ParticipantsView: View {
     
     @StateObject var viewModel = InviteViewModel()

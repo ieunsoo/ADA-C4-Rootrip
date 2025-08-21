@@ -1,7 +1,7 @@
 import SwiftUI
 
 /**
- LoginView에서 넘어오면 여기로 이동함
+ LoginView에서 넘어오면 여기로 이동
  
  - 아래의 view파일로 연결됨
  - InviteCodeInputView

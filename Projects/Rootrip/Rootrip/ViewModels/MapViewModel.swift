@@ -1,7 +1,11 @@
 import SwiftUI
 import MapKit
 
-/// MapKit POI 검색 및 어노테이션 관리를 담당하는 ViewModel
+/**
+ * MapKit POI 검색 및 어노테이션 관리를 담당하는 ViewModel
+ * - 사용자가 지도에서 관심 지점(POI)을 검색하고 표시하는 데 필요한 로직과 데이터를 관리합니다.
+ * - 검색된 POI를 지도 어노테이션으로 변환하고, 선택된 POI의 상태를 `@Published` 프로퍼티를 통해 외부에 노출합니다.
+ */
 class MapViewModel: ObservableObject {
     // MARK: - 속성
     

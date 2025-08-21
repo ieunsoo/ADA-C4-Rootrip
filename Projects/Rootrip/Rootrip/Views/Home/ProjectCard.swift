@@ -1,5 +1,6 @@
 import SwiftUI
 
+/// 개별 프로젝트를 나타내는 카드 뷰입니다.
 struct ProjectCard: View {
     let project: Project
     var isHighlighted: Bool = false // 최신순으로 정렬

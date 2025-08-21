@@ -1,5 +1,6 @@
 import SwiftUI
 
+/// 회원 탈퇴 시 표시되는 알림창입니다.
 struct DeleteAccountAlert: View {
     //TODO: 글자 폰트 수정 필요
     var onCancel: () -> Void

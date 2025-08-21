@@ -1,6 +1,6 @@
-
 import SwiftUI
 
+/// 북마크에 저장된 장소 목록을 보여주는 카드 뷰입니다.
 struct BookmarkCard: View {
     let projectID: String
     let bookmarkID: String

@@ -3,6 +3,12 @@ import Foundation
 import MapKit
 import SwiftUI
 
+/**
+ * 사용자의 현재 위치를 관리하고, 지도 관련 유틸리티 기능을 제공하는 매니저 클래스입니다.
+ * - CLLocationManagerDelegate 를 준수하여 위치 업데이트를 처리하며, @Published 프로퍼티를 통해 위치 정보를 외부에 노출합니다.
+ * - 지도(MKMapView)와의 연동을 통해 경로 표시 및 특정 지역 확대/축소 기능을 제공합니다.
+ * - 앱 내에서 지도와 관련된 핵심적인 위치 및 맵 기능을 담당합니다.
+ */
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     private let manager = CLLocationManager()
     @Published var location: CLLocation?

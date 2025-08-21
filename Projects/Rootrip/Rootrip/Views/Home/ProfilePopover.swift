@@ -1,6 +1,7 @@
 import SwiftUI
 
 // MARK: - 프로필 팝오버 뷰
+/// 프로필 아이콘을 탭했을 때 나타나는 팝오버 뷰입니다.
 struct ProfilePopover: View {
     @Binding var isShowingLogoutAlert: Bool
     @Binding var isShowingPopover: Bool

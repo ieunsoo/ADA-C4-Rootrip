@@ -1,5 +1,6 @@
 import SwiftUI
 
+/// 둥근 모서리를 가진 텍스트 필드 스타일입니다.
 struct RoundedTextFieldStyle: TextFieldStyle {
     func _body(configuration: TextField<Self._Label>) -> some View {
         configuration

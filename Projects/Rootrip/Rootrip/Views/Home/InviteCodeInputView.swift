@@ -1,5 +1,6 @@
 import SwiftUI
 
+/// 초대 코드를 입력하여 프로젝트에 참여하는 뷰입니다.
 struct InviteCodeInputView: View {
     @State var code: String = ""
     @Binding var isShowingCodeSheet: Bool

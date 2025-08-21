@@ -1,6 +1,7 @@
 
 import SwiftUI
 
+/// 일정에 포함된 장소 목록을 보여주는 카드 뷰입니다.
 struct PlanCard: View {
     let projectID: String
     let planID: String

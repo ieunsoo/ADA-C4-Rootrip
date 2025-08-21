@@ -3,6 +3,8 @@ import SwiftUI
 //TODO: 카드뷰 눌렀을때 DetailView로 넘어가도록 해야함
 
 /// ProjectListView, LargeCardView, SmallCardRowView 세 컴포넌트로 구성
+///
+/// - 사용자의 모든 프로젝트를 리스트 형태로 보여주는 뷰입니다.
 /// - selectedProjects는 Set<String>으로, 정렬은 createdDate 기준
 struct ProjectListView: View {
     var projects: [Project]

@@ -4,8 +4,11 @@ import MapKit
 import CoreLocation
 
 // MARK: - MapCoordinator
-/// MKMapViewDelegate 구현 및 사용자 중심 초기화 상태 관리를 담당하는 Coordinator
-/// 
+/**
+ * MKMapViewDelegate를 구현하고 초기화 상태 관리를 담당하는 Coordinator입니다.
+ * - 지도와 뷰 모델 간의 상호작용을 중재하며, POI 어노테이션 선택 및 지도 영역 변경을 처리합니다.
+ * - 지도에 경로를 렌더링하고 커스텀 어노테이션 뷰를 제공하여 지도 경험을 풍부하게 합니다.
+ */
 class MapCoordinator: NSObject, MKMapViewDelegate {
     var hasCenteredOnUser = false
     var parent: MapView?

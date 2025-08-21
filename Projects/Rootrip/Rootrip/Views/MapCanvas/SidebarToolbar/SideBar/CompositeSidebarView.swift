@@ -3,7 +3,7 @@ import SwiftUI
 /// 사이드바 위에 툴바가 올라오도록 한 화면입니다.
 ///
 /// (사이드바는 기본 열림 상태)
-struct SidebarToggleView: View {
+struct CompositeSidebarView: View {
     let project: Project
     @State private var showSidebar = true
     @State private var searchText = ""

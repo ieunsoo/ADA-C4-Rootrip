@@ -2,7 +2,11 @@ import Foundation
 import FirebaseFirestore
 import UIKit
 
-/// 프로젝트에 새로운 유저를 초대하는 기능을 수행하는 ViewModel
+/**
+ * 프로젝트에 새로운 사용자를 초대하고 참여시키는 기능을 수행하는 ViewModel입니다.
+ * - 초대 코드 생성, 클립보드 복사, 그리고 초대 코드를 이용한 프로젝트 참여 로직을 관리합니다.
+ * - 사용자 인터페이스에 로딩 상태, 에러 메시지, 그리고 참여한 프로젝트 정보를 @Published 프로퍼티로 제공합니다.
+ */
 @MainActor
 final class InviteViewModel: ObservableObject {
     @Published var errorMessage: String?
@@ -21,7 +25,12 @@ final class InviteViewModel: ObservableObject {
         self.inviteRepository = inviteRepository
     }
     
-    /// 초대 코드로 프로젝트 참여
+        /**
+         * 주어진 초대 코드를 사용하여 사용자를 프로젝트에 참여시킵니다.
+         * - Parameters:
+         *   - code: 프로젝트 참여를 위한 초대 코드 문자열.
+         *   - userID: 프로젝트에 참여시킬 사용자의 고유 ID.
+         */
     func joinProject(with code: String, userID: String) async {
         // 상태 초기화
         errorMessage = nil

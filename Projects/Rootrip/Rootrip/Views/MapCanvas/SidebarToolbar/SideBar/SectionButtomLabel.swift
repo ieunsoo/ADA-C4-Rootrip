@@ -1,6 +1,9 @@
+/// 사이드바의 섹션 버튼에 적용되는 스타일입니다.
 import SwiftUI
 
-///섹션버튼 Modifier
+/**
+ 섹션버튼 Modifier
+*/
 struct SectionButtomLabel: ViewModifier {
     let isSelected: Bool
 

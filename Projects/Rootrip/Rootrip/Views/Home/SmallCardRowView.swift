@@ -1,6 +1,7 @@
 import Foundation
 import SwiftUI
 
+/// 작은 프로젝트 카드들을 가로로 나열하는 뷰입니다.
 struct SmallCardRowView: View {
     let projects: [Project]
     let startIndex: Int

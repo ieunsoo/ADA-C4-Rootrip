@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import CoreLocation
 
+/// 지도에 표시할 장소 정보를 수동으로 입력하고 저장하는 디버깅용 뷰입니다.
 struct WriteMapDetailView: View {
     @State private var projectID: String = ""
     @State private var containerID: String = ""

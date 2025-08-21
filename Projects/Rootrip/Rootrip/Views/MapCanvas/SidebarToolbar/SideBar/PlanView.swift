@@ -2,6 +2,7 @@ import CoreLocation
 import MapKit
 import SwiftUI
 
+/// 전체 일정 목록을 보여주는 뷰입니다.
 struct PlanView: View {
     @EnvironmentObject var planManager: PlanManager
     @EnvironmentObject var mapState: LocationManager

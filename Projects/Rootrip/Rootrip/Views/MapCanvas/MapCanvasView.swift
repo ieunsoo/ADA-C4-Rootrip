@@ -3,14 +3,18 @@ import PencilKit
 import SwiftUI
 
 /**
- MapView와 CanvasView를 합쳐서 보여주는 View
+ MapView와 CanvasView, CompositeSidebarView를 합쳐서 보여주는 View
+ 
+지도와 그림을 그리는 canvas, 툴바, 사이드바가 합쳐지는 뷰
  */
 struct MapCanvasView: View {
-    @ObservedObject var viewModel: MapViewModel
-
     @EnvironmentObject var locationManager: LocationManager
     @EnvironmentObject var planManager: PlanManager
     @EnvironmentObject var bookmarkManager: BookmarkManager
+    
+    @ObservedObject var viewModel: MapViewModel
+    
+    var project: Project
     
     @Binding var shouldCenterOnUser: Bool
     @Binding var isUtilPen: Bool
@@ -26,6 +30,7 @@ struct MapCanvasView: View {
 
     var body: some View {
         ZStack {
+            
             MapView(
                 viewModel: viewModel,
                 shouldCenterOnUser: $shouldCenterOnUser,
@@ -47,6 +52,17 @@ struct MapCanvasView: View {
                 .background(Color.clear)
                 .ignoresSafeArea()
             }
+            
+            CompositeSidebarView(
+                project: project,
+                lineWidth: $lineWidth,
+                isUtilPen: $isUtilPen,
+                isCanvasActive: $isCanvasActive,
+                isPageLocked: $isPageLocked,
+                undoTrigger: $undoTrigger,
+                redoTrigger: $redoTrigger,
+                lineWidthTrigger: $lineWidthTrigger
+            )
         }
         .overlay(
             VStack(spacing: -7) {

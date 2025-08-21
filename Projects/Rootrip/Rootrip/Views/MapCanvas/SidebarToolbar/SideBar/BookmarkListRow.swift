@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 
 // MARK: - BookmarkListRow
+/// 북마크 리스트의 각 행을 나타내는 뷰입니다.
 struct BookmarkListRow: View {
     let poi: POIData
     let isEditing: Bool
